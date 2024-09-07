@@ -2,26 +2,25 @@
 
 import { useTheme } from "next-themes";
 import { Icons } from "@/components/Icons";
-import { cn } from "@/lib/cn";
 
-interface ThemeSwitchProps {
-  className?: string;
-}
-
-export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ className }) => {
+export const ThemeSwitch: React.FC = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
+  const handleOnChange = () => {
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
+  };
+
   return (
-    <button
-      className={cn(
-        "btn btn-ghost ml-2 flex h-auto min-h-0 flex-col items-center p-0 ring-0",
-        className
-      )}
-    >
-      <Icons.LightBulb
-        className="text-dark-300/85 dark:text-light-400 mt-0.5 aspect-square size-6 shrink-0 self-start"
-        onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+    <label className="swap swap-rotate">
+      <input
+        type="checkbox"
+        className="theme-controller"
+        value="synthwave"
+        onChange={handleOnChange}
       />
-    </button>
+
+      <Icons.Sun className="swap-off h-10 w-10 fill-current" />
+      <Icons.Moon className="swap-on h-10 w-10 fill-current" />
+    </label>
   );
 };
