@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cn } from "@/lib/cn";
 import * as fonts from "./fonts";
 import "./styles/globals.css";
 
@@ -15,7 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fonts.geistSans.variable} ${fonts.geistMono.variable} antialiased`}
+        className={cn(
+          fonts.geistSans.variable,
+          fonts.geistMono.variable,
+          "antialiased",
+          "w-full h-screen"
+        )}
       >
         {children}
       </body>
