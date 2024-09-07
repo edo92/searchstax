@@ -1,3 +1,29 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+
+  "settings": {
+    "tailwindcss": {
+      "callees": ["classnames", "clsx", "cva", "cn", "className"],
+      "config": "./tailwind.config.js"
+    }
+  },
+  "ignorePatterns": ["!**/*", ".next/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "tailwindcss/no-custom-classname": "off",
+        "@next/next/no-html-link-for-pages": ["error", "apps/client/pages"]
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"]
+    }
+  ]
 }

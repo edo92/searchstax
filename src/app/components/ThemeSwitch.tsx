@@ -19,8 +19,8 @@ export const ThemeSwitch: React.FC = () => {
         onChange={handleOnChange}
       />
 
-      <Icons.Sun className="swap-off h-10 w-10 fill-current" />
-      <Icons.Moon className="swap-on h-10 w-10 fill-current" />
+      <Icons.Sun className="swap-off size-10 fill-current" />
+      <Icons.Moon className="swap-on size-10 fill-current" />
     </label>
   );
 };
