@@ -4,11 +4,21 @@
 
 @layer base {
   :root {
+    /* Colors */
     --light-100: 255 255 255;
     --light-200: 245 245 247;
-
     --dark-100: 16 16 17;
     --dark-200: 29 29 31;
+
+    /* Border Width */
+    --border-0: 0rem;
+    --border-0-5: 0.5px;
+    --border: 0.0625rem;
+    --border-2: 0.125rem;
+    --border-3: 0.1875rem;
+    --border-4: 0.25rem;
+    --border-5: 0.3125rem;
+    --border-6: 0.375rem;
   }
 }
 

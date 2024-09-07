@@ -5,7 +5,7 @@ const ThemeSwitch = dynamic(() => import("./ThemeSwitch"), {
 });
 
 export const Header: React.FC = () => (
-  <header className="border-b-0.5 border-dark-100/10 dark:border-light-100/10 mx-auto flex w-full items-center justify-between shadow-sm">
+  <header className="border-b-0.5 border-dark-100/10 dark:border-light-100/5 mx-auto flex w-full items-center justify-between shadow-sm">
     <div className="navbar px-3">
       <div className="navbar-start">
         <a className="btn btn-ghost">
