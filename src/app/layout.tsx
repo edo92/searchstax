@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { cn } from "@/lib/cn";
 import * as fonts from "./fonts";
 import "./styles/globals.css";
+import { Providers } from "./providers";
+import { Header } from "./components/Header";
 
 export const metadata: Metadata = {
   title: "SearchStax",
@@ -14,16 +16,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body
         className={cn(
           fonts.geistSans.variable,
           fonts.geistMono.variable,
           "antialiased",
-          "w-full h-screen"
+          "h-screen w-full"
         )}
       >
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
