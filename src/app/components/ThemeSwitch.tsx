@@ -19,8 +19,8 @@ const ThemeSwitch: React.FC = () => {
         onChange={handleOnChange}
       />
 
-      <Icons.Sun className="swap-off size-10 fill-current" />
-      <Icons.Moon className="swap-on size-10 fill-current" />
+      <Icons.Sun className="swap-off text-dark-200 dark:text-light-200 mr-3 size-6" />
+      <Icons.Moon className="swap-on text-dark-200 dark:text-light-200 mr-3 size-6" />
     </label>
   );
 };

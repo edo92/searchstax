@@ -7,13 +7,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
 
-  darkMode: ["class", '[data-theme="dark"]'],
+  darkMode: "class",
 
   theme: {
     extend: {
       colors: {
         light: {
           100: "rgb(var(--light-100) / <alpha-value>)",
+          200: "rgb(var(--light-200) / <alpha-value>)",
         },
 
         dark: {

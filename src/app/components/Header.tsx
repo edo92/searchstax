@@ -5,10 +5,14 @@ const ThemeSwitch = dynamic(() => import("./ThemeSwitch"), {
 });
 
 export const Header: React.FC = () => (
-  <header className="border-b-0.5 border-dark-100/10 dark:border-light-200/10 dark:border-b-px flex w-full items-center justify-center whitespace-nowrap shadow-sm max-md:max-w-full max-md:px-5">
-    <div className="navbar bg-base-100">
+  <header className="border-b-0.5 border-dark-100/10 dark:border-light-100/10 mx-auto flex w-full items-center justify-between shadow-sm">
+    <div className="navbar px-3">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">SearchX</a>
+        <a className="btn btn-ghost">
+          <span className="text-dark-200 dark:text-light-200 text-xl">
+            SearchX
+          </span>
+        </a>
       </div>
       <div className="navbar-end">
         <ThemeSwitch />
