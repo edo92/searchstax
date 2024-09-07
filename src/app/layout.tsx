@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { cn } from "@/lib/cn";
 import * as fonts from "./fonts";
-import "./styles/globals.css";
 import { Providers } from "./providers";
 import { Header } from "./components/Header";
+import "./styles/globals.css";
 
 export const metadata: Metadata = {
   title: "SearchStax",
