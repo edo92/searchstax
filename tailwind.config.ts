@@ -13,12 +13,12 @@ const config: Config = {
     extend: {
       colors: {
         light: {
-          100: "rgb(var(--color-light-100) / <alpha-value>)",
+          100: "rgb(var(--light-100) / <alpha-value>)",
         },
 
         dark: {
-          100: "rgb(var(--color-dark-100) / <alpha-value>)",
-          200: "rgb(var(--color-dark-200) / <alpha-value>)",
+          100: "rgb(var(--dark-100) / <alpha-value>)",
+          200: "rgb(var(--dark-200) / <alpha-value>)",
         },
       },
     },
@@ -28,12 +28,12 @@ const config: Config = {
     themes: [
       {
         dark: {
-          background: "var(--color-dark-100)",
+          background: "var(--dark-100)",
         },
       },
       {
         light: {
-          background: "var(--color-light-100)",
+          background: "var(--light-100)",
         },
       },
     ],
