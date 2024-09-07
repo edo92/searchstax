@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { Icons } from "@/components/Icons";
 
-export const ThemeSwitch: React.FC = () => {
+const ThemeSwitch: React.FC = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   const handleOnChange = () => {
@@ -24,3 +24,5 @@ export const ThemeSwitch: React.FC = () => {
     </label>
   );
 };
+
+export default ThemeSwitch;
