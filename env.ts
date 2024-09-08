@@ -8,7 +8,7 @@ export const env = createEnv({
     NEXT_PUBLIC_TRACK_API_KEY: z.string(),
     NEXT_PUBLIC_SEARCH_AUTH: z.string(),
     NEXT_PUBLIC_RELATED_SEARCHES_URL: z.string(),
-    NEXT_PUBLIC_AUTH_TYPE: z.string(),
+    NEXT_PUBLIC_AUTH_TYPE: z.enum(["token", "basic"]),
     NEXT_PUBLIC_RELATED_SEARCHES_API_KEY: z.string(),
     NEXT_PUBLIC_ANALYTICS_BASE_URL: z.string(),
   },
