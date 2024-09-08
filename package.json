@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@searchstax-inc/searchstudio-ux-js": "^0.6.39",
+    "@searchstax-inc/searchstudio-ux-react": "^0.3.16",
     "@t3-oss/env-nextjs": "^0.11.1",
     "clsx": "^2.1.1",
     "next": "14.2.8",

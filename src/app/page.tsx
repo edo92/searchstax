@@ -1,9 +1,20 @@
+"use client";
+
+import { SearchstaxInputWidget } from "@searchstax-inc/searchstudio-ux-react";
+import { renderConfig } from "./config";
+
+import { SearchWrapper } from "./components/SearchWrapper";
+import { InputTemplate } from "./components/SearchTemplates/Input.Template";
+
 export default function Home() {
   return (
-    <div className="flex size-full flex-col items-center justify-center">
-      <div className="flex size-full flex-col self-stretch">
-        <></>
+    <SearchWrapper>
+      <div className="searchstax-page-layout-container">
+        <SearchstaxInputWidget
+          inputTemplate={InputTemplate}
+          suggestAfterMinChars={renderConfig.inputWidget.suggestAfterMinChars}
+        />
       </div>
-    </div>
+    </SearchWrapper>
   );
 }
