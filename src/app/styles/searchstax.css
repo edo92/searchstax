@@ -1,3 +1,5 @@
+@import url("../../../node_modules/@searchstax-inc/searchstudio-ux-js/dist/styles/mainTheme.css");
+
 .searchstax-search-input-container {
   width: unset;
   height: auto;
@@ -16,4 +18,18 @@
   height: 20px;
   max-width: 20px;
   margin-right: 10px;
+}
+
+html.dark .searchstax-facets-pill-label {
+  color: white !important;
+}
+
+html.light .searchstax-facets-pill-label {
+  color: black !important;
+}
+
+.searchstax-facets-pill.searchstax-facets-pill-filter-by {
+  height: auto !important;
+  width: auto !important;
+  padding: 0.25rem !important;
 }

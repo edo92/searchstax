@@ -1,5 +1,6 @@
 "use client";
 
+import "./styles/searchstax.css";
 import { useRef } from "react";
 import {
   SearchstaxWrapper,
@@ -8,6 +9,7 @@ import {
   SearchstaxFacetsWidget,
   SearchstaxSortingWidget,
   SearchstaxResultWidget,
+  SearchstaxPaginationWidget,
 } from "@searchstax-inc/searchstudio-ux-react";
 import type {
   Searchstax,
@@ -21,6 +23,7 @@ import { OverviewTemplate } from "./components/SearchTemplates/Overview.Template
 import { FacetDesktopTemplate } from "./components/SearchTemplates/Facet.Template";
 import { SortingTemplate } from "./components/SearchTemplates/Sorting.Template";
 import { ResultsTemplate } from "./components/SearchTemplates/Results.Template";
+import { PaginationTemplate } from "./components/SearchTemplates/Pagination.Template";
 
 export default function Home() {
   const instanceRef = useRef<Searchstax>();
@@ -58,7 +61,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-col gap-5 md:flex-row">
             <SearchstaxFacetsWidget
               facetingType={renderConfig.facetsWidget.facetingType}
               itemsPerPageMobile={renderConfig.facetsWidget.itemsPerPageMobile}
@@ -67,17 +70,24 @@ export default function Home() {
               }
               facetsTemplateDesktop={FacetDesktopTemplate}
               specificFacets={undefined}
-              // facetsTemplateMobile={facetsTemplateMobile}
             />
+
+            <div className="flex w-full flex-col gap-3">
+              <SearchstaxSortingWidget
+                searchSortingTemplate={SortingTemplate}
+              />
+              <SearchstaxResultWidget
+                afterLinkClick={handleLinkClick}
+                resultsPerPage={renderConfig.resultsWidget.itemsPerPage}
+                renderMethod={renderConfig.resultsWidget.renderMethod}
+                resultsTemplate={ResultsTemplate}
+              />
+            </div>
           </div>
 
-          <div className="flex w-full flex-col gap-3">
-            <SearchstaxSortingWidget searchSortingTemplate={SortingTemplate} />
-            <SearchstaxResultWidget
-              afterLinkClick={handleLinkClick}
-              resultsPerPage={renderConfig.resultsWidget.itemsPerPage}
-              renderMethod={renderConfig.resultsWidget.renderMethod}
-              resultsTemplate={ResultsTemplate}
+          <div className="md:pl-60 py-5">
+            <SearchstaxPaginationWidget
+              paginationTemplate={PaginationTemplate}
             />
           </div>
         </div>
