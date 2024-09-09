@@ -23,6 +23,14 @@ yarn install
 yarn dev
 ```
 
+## Run in container
+
+1. start project in docker container
+
+```sh
+docker-compose up
+```
+
 ## Local development
 
 - Environmental variables
@@ -40,6 +48,7 @@ NEXT_PUBLIC_ANALYTICS_BASE_URL=https://example.com/analytics
 ```
 
 ## Technologies Used
+
 This project leverages the following key technologies:
 
 - **Next.js (v14)**:
