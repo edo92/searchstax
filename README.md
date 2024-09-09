@@ -26,7 +26,7 @@ yarn dev
 ## Local development
 
 - Environmental variables
-  Automatically loads environment variables from .env.local file and validates with zod
+  Automatically loads environment variables from .env.dev file and validates with zod
 
 ```sh
 NEXT_PUBLIC_SEARCH_URL=https://example.com/search
@@ -40,7 +40,6 @@ NEXT_PUBLIC_ANALYTICS_BASE_URL=https://example.com/analytics
 ```
 
 ## Technologies Used
-
 This project leverages the following key technologies:
 
 - **Next.js (v14)**:
