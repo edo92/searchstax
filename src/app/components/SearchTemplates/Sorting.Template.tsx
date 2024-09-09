@@ -1,6 +1,6 @@
 import { ISearchstaxSearchSortingData } from "@searchstax-inc/searchstudio-ux-js";
 
-export function searchSortingTemplate(
+export function SortingTemplate(
   sortingData: null | ISearchstaxSearchSortingData,
   orderChange: (value: string) => void,
   selectedSorting: string
