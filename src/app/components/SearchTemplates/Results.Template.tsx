@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
-import type { ISearchstaxParsedResult } from "@searchstax-inc/searchstudio-ux-js";
+import type {
+  ISearchstaxParsedResult,
+  ISearchstaxSearchMetadata,
+} from "@searchstax-inc/searchstudio-ux-js";
 
 export const ResultsTemplate = (
   searchResults: ISearchstaxParsedResult[]
@@ -12,7 +15,10 @@ export const ResultsTemplate = (
 ) => (
   <>
     {searchResults && searchResults.length > 0 && (
-      <div className="searchstax-search-results space-y-4 mt-2.5" aria-live="polite">
+      <div
+        className="searchstax-search-results space-y-4 mt-2.5"
+        aria-live="polite"
+      >
         {searchResults.map((searchResult) => (
           <div
             tabIndex={0}
@@ -59,4 +65,41 @@ export const ResultsTemplate = (
       </div>
     )}
   </>
+);
+
+export const NoResultsTemplate = (
+  searchTerm: string,
+  metaData: ISearchstaxSearchMetadata | null,
+  executeSearch: (searchTerm: string) => void
+) => (
+  <div>
+    <div className="searchstax-no-results text-dark-200 dark:text-light-200 mt-8">
+      Showing <strong>no results</strong> for{" "}
+      <strong>&quot;{searchTerm}&quot;</strong>
+      <br />
+      {metaData?.spellingSuggestion && (
+        <span>
+          &nbsp;Did you mean{" "}
+          <a
+            href="#"
+            className="searchstax-suggestion-term"
+            onClick={(e) => {
+              e.preventDefault();
+              executeSearch(metaData.spellingSuggestion);
+            }}
+          >
+            {metaData.spellingSuggestion}
+          </a>
+          ?
+        </span>
+      )}
+    </div>
+    <ul className="text-dark-200 dark:text-light-200">
+      <li>
+        Try searching for related terms or topics. We offer a wide variety of
+        content to help you find the information you need.
+      </li>
+      <li>Lost? Click on the ‘X’ in the Search Box to reset your search.</li>
+    </ul>
+  </div>
 );

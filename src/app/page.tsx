@@ -22,7 +22,10 @@ import { InputTemplate } from "./components/SearchTemplates/Input.Template";
 import { OverviewTemplate } from "./components/SearchTemplates/Overview.Template";
 import { FacetDesktopTemplate } from "./components/SearchTemplates/Facet.Template";
 import { SortingTemplate } from "./components/SearchTemplates/Sorting.Template";
-import { ResultsTemplate } from "./components/SearchTemplates/Results.Template";
+import {
+  NoResultsTemplate,
+  ResultsTemplate,
+} from "./components/SearchTemplates/Results.Template";
 import { PaginationTemplate } from "./components/SearchTemplates/Pagination.Template";
 
 export default function Home() {
@@ -84,6 +87,7 @@ export default function Home() {
                 resultsPerPage={renderConfig.resultsWidget.itemsPerPage}
                 renderMethod={renderConfig.resultsWidget.renderMethod}
                 resultsTemplate={ResultsTemplate}
+                noResultTemplate={NoResultsTemplate}
               />
             </div>
           </div>
