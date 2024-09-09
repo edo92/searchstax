@@ -13,7 +13,8 @@
   margin-right: 10px;
 }
 
-.searchstax-spinner-icon {
+.searchstax-spinner-icon,
+.searchstax-search-icon {
   width: 20px;
   height: 20px;
   max-width: 20px;
