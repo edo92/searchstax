@@ -49,8 +49,8 @@ export const ResultsTemplate = (
               )}
             </div>
 
-            <div className="rounded-br-5 absolute bottom-0 left-0 flex min-w-32 justify-center rounded-t-[2px] !bg-gray-100 p-1">
-              <small className="text-xs font-medium">
+            <div className="rounded-bl-md rounded-tr-[1px] absolute bottom-0 left-0 flex min-w-28 justify-center !bg-[#d63202] p-1">
+              <small className="text-xs font-medium text-light-100">
                 {searchResult.ribbon}
               </small>
             </div>
