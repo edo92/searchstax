@@ -1,5 +1,7 @@
 # SearchStax - UI Kit
 
+[Live view](https://searchstax-9zy67ljuz-eduard-jacobs-projects.vercel.app/)
+
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
