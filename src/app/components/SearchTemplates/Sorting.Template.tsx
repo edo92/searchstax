@@ -8,10 +8,10 @@ export function SortingTemplate(
   return (
     <div className="flex w-full flex-col items-end">
       {sortingData && sortingData?.searchExecuted && (
-        <div className="searchstax-sorting-container w-60">
+        <div className="searchstax-sorting-container w-60 px-3">
           <label
             className="searchstax-sorting-label text-dark-200 dark:text-light-200"
-            htmlFor="searchstax-search-order-select"
+            htmlFor="searchstax-search-order-select text-md"
           >
             Sort By
           </label>

@@ -26,7 +26,7 @@ export function OverviewTemplate(
   return (
     <div className="mb-3">
       <div className="text-dark-200 dark:text-light-200 flex flex-col">
-        <div className="flex flex-row gap-x-1">
+        <div className="flex flex-row gap-x-1 text-nowrap">
           <small>Showing</small>
           <small>
             <b>{`${startResultIndex} - ${endResultIndex}`}</b>
