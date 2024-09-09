@@ -18,7 +18,7 @@ export const ResultsTemplate = (
             tabIndex={0}
             key={searchResult.uniqueId}
             data-searchstax-unique-result-id={searchResult.uniqueId}
-            className="searchstax-result-item-link searchstax-result-item-link-wrapping rounded-lg bg-white p-6 shadow-md"
+            className="searchstax-result-item-link searchstax-result-item-link-wrapping rounded-lg bg-gray-100 dark:bg-dark-200 p-6 shadow-md"
           >
             <div className="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between">
               <div
@@ -29,7 +29,9 @@ export const ResultsTemplate = (
                     {searchResult.title}
                   </Link>
                 </h3>
-                <p className="text-gray-600">{searchResult.description}</p>
+                <p className="text-dark-200/50 dark:text-light-200">
+                  {searchResult.description}
+                </p>
               </div>
 
               {searchResult.thumbnail && (
