@@ -43,7 +43,7 @@ export const FacetDesktopTemplate = (
         key={`${facet.name}-desktop`}
         className={cn(
           "searchstax-facet-container",
-          "dark:bg-dark-200 rounded-lg bg-gray-100 p-3 shadow-lg",
+          "dark:bg-dark-300 rounded-lg bg-gray-100 p-3 shadow-lg",
           isNotDeactivated(facet.name) && "active"
         )}
       >

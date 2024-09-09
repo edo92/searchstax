@@ -20,6 +20,7 @@ const config: Config = {
         dark: {
           100: "rgb(var(--dark-100) / <alpha-value>)",
           200: "rgb(var(--dark-200) / <alpha-value>)",
+          300: "rgb(var(--dark-300) / <alpha-value>)",
         },
       },
 

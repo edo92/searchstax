@@ -55,22 +55,25 @@ export default function Home() {
             suggestAfterMinChars={renderConfig.inputWidget.suggestAfterMinChars}
           />
 
-          <div className="search-details-container">
-            <SearchstaxOverviewWidget
-              searchOverviewTemplate={OverviewTemplate}
-            />
-          </div>
-
-          <div className="flex flex-col gap-5 md:flex-row">
-            <SearchstaxFacetsWidget
-              facetingType={renderConfig.facetsWidget.facetingType}
-              itemsPerPageMobile={renderConfig.facetsWidget.itemsPerPageMobile}
-              itemsPerPageDesktop={
-                renderConfig.facetsWidget.itemsPerPageDesktop
-              }
-              facetsTemplateDesktop={FacetDesktopTemplate}
-              specificFacets={undefined}
-            />
+          <div className="flex flex-col gap-5 md:flex-row mt-3">
+            <div className="flex flex-col">
+              <div className="search-details-container">
+                <SearchstaxOverviewWidget
+                  searchOverviewTemplate={OverviewTemplate}
+                />
+              </div>
+              <SearchstaxFacetsWidget
+                facetingType={renderConfig.facetsWidget.facetingType}
+                itemsPerPageMobile={
+                  renderConfig.facetsWidget.itemsPerPageMobile
+                }
+                itemsPerPageDesktop={
+                  renderConfig.facetsWidget.itemsPerPageDesktop
+                }
+                facetsTemplateDesktop={FacetDesktopTemplate}
+                specificFacets={undefined}
+              />
+            </div>
 
             <div className="flex w-full flex-col gap-3">
               <SearchstaxSortingWidget
