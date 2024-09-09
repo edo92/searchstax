@@ -20,7 +20,7 @@ export const renderConfig: RenderConfig = {
   facetsWidget: {
     itemsPerPageDesktop: 3,
     itemsPerPageMobile: 99,
-    facetingType: "and",
+    facetingType: "or",
   },
   resultsWidget: {
     renderMethod: "pagination",

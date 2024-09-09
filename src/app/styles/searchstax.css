@@ -1,0 +1,19 @@
+.searchstax-search-input-container {
+  width: unset;
+  height: auto;
+  border: unset;
+}
+
+.searchstax-search-close {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.searchstax-spinner-icon {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  margin-right: 10px;
+}
