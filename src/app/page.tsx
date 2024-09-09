@@ -1,19 +1,26 @@
 "use client";
 
+import { useRef } from "react";
 import {
   SearchstaxWrapper,
   SearchstaxInputWidget,
   SearchstaxOverviewWidget,
   SearchstaxFacetsWidget,
+  SearchstaxSortingWidget,
+  SearchstaxResultWidget,
 } from "@searchstax-inc/searchstudio-ux-react";
-import type { Searchstax } from "@searchstax-inc/searchstudio-ux-js";
-import { env } from "@/env";
+import type {
+  Searchstax,
+  ISearchstaxParsedResult,
+} from "@searchstax-inc/searchstudio-ux-js";
 
+import { env } from "@/env";
 import { renderConfig } from "./config";
 import { InputTemplate } from "./components/SearchTemplates/Input.Template";
-import { useRef } from "react";
 import { OverviewTemplate } from "./components/SearchTemplates/Overview.Template";
 import { FacetDesktopTemplate } from "./components/SearchTemplates/Facet.Template";
+import { SortingTemplate } from "./components/SearchTemplates/Sorting.Template";
+import { ResultsTemplate } from "./components/SearchTemplates/Results.Template";
 
 export default function Home() {
   const instanceRef = useRef<Searchstax>();
@@ -21,6 +28,10 @@ export default function Home() {
   const handleInitialized = (instance: Searchstax) => {
     console.log("Searchstax initialized");
     instanceRef.current = instance;
+  };
+
+  const handleLinkClick = (result: ISearchstaxParsedResult) => {
+    return { ...result };
   };
 
   return (
@@ -55,8 +66,18 @@ export default function Home() {
                 renderConfig.facetsWidget.itemsPerPageDesktop
               }
               facetsTemplateDesktop={FacetDesktopTemplate}
-              // facetsTemplateMobile={facetsTemplateMobile}
               specificFacets={undefined}
+              // facetsTemplateMobile={facetsTemplateMobile}
+            />
+          </div>
+
+          <div className="flex w-full flex-col gap-3">
+            <SearchstaxSortingWidget searchSortingTemplate={SortingTemplate} />
+            <SearchstaxResultWidget
+              afterLinkClick={handleLinkClick}
+              resultsPerPage={renderConfig.resultsWidget.itemsPerPage}
+              renderMethod={renderConfig.resultsWidget.renderMethod}
+              resultsTemplate={ResultsTemplate}
             />
           </div>
         </div>
