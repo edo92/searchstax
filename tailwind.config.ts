@@ -32,6 +32,15 @@ const config: Config = {
           200: "rgb(var(--dark-200) / <alpha-value>)",
           300: "rgb(var(--dark-300) / <alpha-value>)",
         },
+
+        primary: {
+          100: "rgb(var(--primary-100) / <alpha-value>)",
+        },
+
+        gray: {
+          100: "rgb(var(--gray-100) / <alpha-value>)",
+          200: "rgb(var(--gray-200) / <alpha-value>)",
+        },
       },
 
       borderWidth: {

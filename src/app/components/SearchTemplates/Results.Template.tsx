@@ -6,6 +6,7 @@ import type {
   ISearchstaxParsedResult,
   ISearchstaxSearchMetadata,
 } from "@searchstax-inc/searchstudio-ux-js";
+import { Typography } from "@/components/Typography";
 
 export const ResultsTemplate = (
   searchResults: ISearchstaxParsedResult[]
@@ -42,30 +43,45 @@ export const ResultsTemplate = (
 
               <div className="flex w-2/3 flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-500 hover:underline">
+                  <h3 className="text-primary-100/80 text-xl font-semibold hover:underline">
                     <Link target="_blank" href={url || ""}>
                       {title}
                     </Link>
                   </h3>
                   {description && (
-                    <p className="dark:text-light-200 mt-2 text-gray-600">
+                    <Typography
+                      variant="p"
+                      size="sm"
+                      font="regular"
+                      className="text-gray-100"
+                    >
                       {description}
-                    </p>
+                    </Typography>
                   )}
                 </div>
 
                 {date && (
-                  <div className="dark:text-light-200 mt-4 text-sm text-gray-500">
+                  <Typography
+                    variant="p"
+                    size="xs"
+                    font="light"
+                    className="mt-4 !text-gray-600 dark:!text-gray-300"
+                  >
                     {parseDate(date)}
-                  </div>
+                  </Typography>
                 )}
               </div>
 
               {ribbon && (
                 <div className="absolute bottom-0 right-0 flex min-w-28 justify-center rounded-br-md rounded-tl-[2px] bg-[#d63202] p-1">
-                  <small className="text-xs font-medium text-white">
+                  <Typography
+                    variant="small"
+                    size="xs"
+                    font="medium"
+                    className="text-light-100"
+                  >
                     {ribbon}
-                  </small>
+                  </Typography>
                 </div>
               )}
             </div>

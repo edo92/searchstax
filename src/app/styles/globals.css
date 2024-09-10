@@ -5,11 +5,17 @@
 @layer base {
   :root {
     /* Colors */
-    --light-100: 255 255 255;
-    --light-200: 245 245 247;
     --dark-100: 16 16 17;
     --dark-200: 29 29 31;
     --dark-300: 40 40 43;
+
+    --light-100: 255 255 255;
+    --light-200: 245 245 247;
+
+    --primary-100: 0 113 227;
+
+    --gray-200: rgb(141, 144, 149);
+    --gray-100: rgb(178, 180, 185);
 
     /* Border Width */
     --border-0: 0rem;
