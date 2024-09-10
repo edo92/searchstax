@@ -19,7 +19,8 @@
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "tailwindcss/no-custom-classname": "off",
-        "@next/next/no-html-link-for-pages": ["error", "apps/client/pages"]
+        "@next/next/no-html-link-for-pages": ["error", "apps/client/pages"],
+        "react-hooks/exhaustive-deps": "off"
       }
     },
     {

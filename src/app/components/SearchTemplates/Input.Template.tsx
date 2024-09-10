@@ -1,9 +1,9 @@
+import { useCallback } from "react";
 import { cn } from "@/lib/cn";
 import type {
   Searchstax,
   ISearchstaxSuggestion,
 } from "@searchstax-inc/searchstudio-ux-js";
-import { useCallback } from "react";
 
 export const InputTemplate = (
   suggestions: ISearchstaxSuggestion[],
@@ -20,7 +20,6 @@ export const InputTemplate = (
     };
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const executeDebouncedSearch = useCallback(
     debounce((value: string) => {
       instance.executeSearch(value, true);
