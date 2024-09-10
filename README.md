@@ -19,15 +19,14 @@ Follow these steps to get the project up and running:
 yarn install
 ```
 
-2. **Start**
+2. **Start local development**
 
 ```sh
 yarn dev
 ```
 
-## Run in container
-
-1. start project in docker container
+3. **Start in Container**
+   start project in docker container
 
 ```sh
 docker-compose up
