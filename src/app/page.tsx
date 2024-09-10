@@ -2,6 +2,11 @@
 
 import "./styles/searchstax.css";
 import { useRef } from "react";
+
+import type {
+  Searchstax,
+  ISearchstaxParsedResult,
+} from "@searchstax-inc/searchstudio-ux-js";
 import {
   SearchstaxWrapper,
   SearchstaxInputWidget,
@@ -11,22 +16,18 @@ import {
   SearchstaxResultWidget,
   SearchstaxPaginationWidget,
 } from "@searchstax-inc/searchstudio-ux-react";
-import type {
-  Searchstax,
-  ISearchstaxParsedResult,
-} from "@searchstax-inc/searchstudio-ux-js";
 
 import { env } from "@/env";
 import { renderConfig } from "./config";
 import { InputTemplate } from "./components/SearchTemplates/Input.Template";
+import { SortingTemplate } from "./components/SearchTemplates/Sorting.Template";
 import { OverviewTemplate } from "./components/SearchTemplates/Overview.Template";
 import { FacetDesktopTemplate } from "./components/SearchTemplates/Facet.Template";
-import { SortingTemplate } from "./components/SearchTemplates/Sorting.Template";
+import { PaginationTemplate } from "./components/SearchTemplates/Pagination.Template";
 import {
   NoResultsTemplate,
   ResultsTemplate,
 } from "./components/SearchTemplates/Results.Template";
-import { PaginationTemplate } from "./components/SearchTemplates/Pagination.Template";
 
 export default function Home() {
   const instanceRef = useRef<Searchstax>();
