@@ -1,5 +1,15 @@
 import type { Config } from "tailwindcss";
 
+const baseFonts = [
+  "ui-sans-serif",
+  "system-ui",
+  "sans-serif",
+  "Apple Color Emoji",
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"',
+  '"Noto Color Emoji"',
+];
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -33,6 +43,14 @@ const config: Config = {
         4: "var(--border-4)",
         5: "var(--border-5)",
         6: "var(--border-6)",
+      },
+
+      fontFamily: {
+        bold: ["var(--font-inter-bold)", ...baseFonts],
+        semibold: ["var(--font-inter-semibold)", ...baseFonts],
+        medium: ["var(--font-inter-medium)", ...baseFonts],
+        regular: ["var(--font-inter-regular)", ...baseFonts],
+        light: ["var(--font-inter-light)", ...baseFonts],
       },
     },
   },

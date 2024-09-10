@@ -20,8 +20,11 @@ export default function RootLayout({
     <html lang="en" data-theme="dark">
       <body
         className={cn(
-          fonts.geistSans.variable,
-          fonts.geistMono.variable,
+          fonts.interBold.variable,
+          fonts.interSemibold.variable,
+          fonts.interMedium.variable,
+          fonts.interRegular.variable,
+          fonts.interLight.variable,
           "antialiased",
           "h-screen w-full"
         )}
