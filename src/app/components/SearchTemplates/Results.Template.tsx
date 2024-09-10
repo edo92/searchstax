@@ -17,7 +17,7 @@ export const ResultsTemplate = (
   <>
     {searchResults?.length > 0 && (
       <div
-        className="searchstax-search-results space-y-4 mt-2.5"
+        className="searchstax-search-results mt-2.5 space-y-4"
         aria-live="polite"
       >
         {searchResults.map(
@@ -26,21 +26,21 @@ export const ResultsTemplate = (
               tabIndex={0}
               key={uniqueId}
               data-searchstax-unique-result-id={uniqueId}
-              className="relative flex rounded-lg bg-gray-100 dark:bg-dark-300 p-6 shadow-md overflow-hidden gap-6"
+              className="dark:bg-dark-300 relative flex gap-6 overflow-hidden rounded-lg bg-gray-100 p-6 shadow-md"
             >
               {thumbnail && (
-                <div className="w-1/3 flex justify-center items-center">
+                <div className="flex w-1/3 items-center justify-center">
                   <Image
                     src={thumbnail}
                     alt={title || "Thumbnail"}
-                    className="rounded-lg object-cover size-full"
+                    className="size-full rounded-lg object-cover"
                     width={150}
                     height={150}
                   />
                 </div>
               )}
 
-              <div className="w-2/3 flex flex-col justify-between">
+              <div className="flex w-2/3 flex-col justify-between">
                 <div>
                   <h3 className="text-xl font-semibold text-blue-500 hover:underline">
                     <Link target="_blank" href={url || ""}>
@@ -48,21 +48,21 @@ export const ResultsTemplate = (
                     </Link>
                   </h3>
                   {description && (
-                    <p className="mt-2 text-gray-600 dark:text-light-200">
+                    <p className="dark:text-light-200 mt-2 text-gray-600">
                       {description}
                     </p>
                   )}
                 </div>
 
                 {date && (
-                  <div className="mt-4 text-sm text-gray-500 dark:text-light-200">
+                  <div className="dark:text-light-200 mt-4 text-sm text-gray-500">
                     {parseDate(date)}
                   </div>
                 )}
               </div>
 
               {ribbon && (
-                <div className="absolute bottom-0 right-0 flex min-w-28 justify-center bg-[#d63202] p-1 rounded-br-md rounded-tl-[2px]">
+                <div className="absolute bottom-0 right-0 flex min-w-28 justify-center rounded-br-md rounded-tl-[2px] bg-[#d63202] p-1">
                   <small className="text-xs font-medium text-white">
                     {ribbon}
                   </small>

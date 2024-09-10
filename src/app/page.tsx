@@ -58,7 +58,7 @@ export default function Home() {
             suggestAfterMinChars={renderConfig.inputWidget.suggestAfterMinChars}
           />
 
-          <div className="flex flex-col gap-5 md:flex-row mt-3">
+          <div className="mt-3 flex flex-col gap-5 md:flex-row">
             <div className="flex flex-col">
               <div className="search-details-container">
                 <SearchstaxOverviewWidget
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="md:pl-60 py-5">
+          <div className="py-5 md:pl-60">
             <SearchstaxPaginationWidget
               paginationTemplate={PaginationTemplate}
             />
