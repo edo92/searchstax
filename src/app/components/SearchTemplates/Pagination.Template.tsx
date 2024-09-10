@@ -1,3 +1,4 @@
+import { Typography } from "@/components/Typography";
 import type { IPaginationData } from "@searchstax-inc/searchstudio-ux-js";
 
 export const PaginationTemplate = (
@@ -36,10 +37,15 @@ export const PaginationTemplate = (
             &lt; Previous
           </button>
 
-          <div className="searchstax-pagination-details">
+          <Typography
+            variant="span"
+            font="medium"
+            size="sm"
+            className="searchstax-pagination-details"
+          >
             {paginationData?.startResultIndex} -{" "}
             {paginationData?.endResultIndex} of {paginationData?.totalResults}
-          </div>
+          </Typography>
 
           <button
             className="searchstax-pagination-next"

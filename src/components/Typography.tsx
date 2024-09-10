@@ -53,7 +53,7 @@ export const Typography: React.FC<TypographyProps> = ({
       return (
         <p
           {...props}
-          className={cn(TypographyVariants({ variant, size, font }), className)}
+          className={cn(TypographyVariants({ variant, size, font, className }))}
         >
           {children}
         </p>
@@ -63,7 +63,7 @@ export const Typography: React.FC<TypographyProps> = ({
       return (
         <span
           {...props}
-          className={cn(TypographyVariants({ variant, size, font }), className)}
+          className={cn(TypographyVariants({ variant, size, font, className }))}
         >
           {children}
         </span>
@@ -73,7 +73,7 @@ export const Typography: React.FC<TypographyProps> = ({
       return (
         <small
           {...props}
-          className={cn(TypographyVariants({ variant, size, font }), className)}
+          className={cn(TypographyVariants({ variant, size, font, className }))}
         >
           {children}
         </small>
@@ -83,7 +83,7 @@ export const Typography: React.FC<TypographyProps> = ({
       return (
         <p
           {...props}
-          className={cn(TypographyVariants({ variant, size, font }), className)}
+          className={cn(TypographyVariants({ variant, size, font, className }))}
         >
           {children}
         </p>

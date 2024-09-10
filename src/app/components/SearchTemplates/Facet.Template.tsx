@@ -8,6 +8,7 @@ import {
   IFacetValueData,
   IFacetsTemplateData,
 } from "@searchstax-inc/searchstudio-ux-js";
+import { Typography } from "@/components/Typography";
 
 interface IFacetData extends IFacet {
   values: (IFacetValue & IFacetValueData)[];
@@ -54,8 +55,15 @@ export const FacetDesktopTemplate = (
               toggleFacetGroup(facet.name);
             }}
           >
-            <div className="searchstax-facet-title text-dark-200 dark:text-light-200 !capitalize">
-              {facet.label}
+            <div className="searchstax-facet-title">
+              <Typography
+                variant="span"
+                size="md"
+                font="regular"
+                className="!capitalize"
+              >
+                {facet.label}
+              </Typography>
             </div>
             <div className="searchstax-facet-title-arrow active after:!right-0 after:!top-[-5px] after:!size-8" />
           </div>
@@ -68,7 +76,8 @@ export const FacetDesktopTemplate = (
                   key={facetValue.value + facetValue.parentName}
                   className={cn(
                     "searchstax-facet-value-container",
-                    facetValue.disabled && "searchstax-facet-value-disabled"
+                    facetValue.disabled && "searchstax-facet-value-disabled",
+                    "text-md font-regular"
                   )}
                 >
                   <div
@@ -91,12 +100,19 @@ export const FacetDesktopTemplate = (
                   </div>
 
                   <div
-                    className="searchstax-facet-value-label text-dark-200 dark:text-light-200"
+                    className="searchstax-facet-value-label"
                     onClick={(e) => {
                       selectFacet(key + facet.name, e, facetValue, false);
                     }}
                   >
-                    {facetValue.value}
+                    <Typography
+                      variant="span"
+                      size="md"
+                      font="regular"
+                      className="!capitalize"
+                    >
+                      {facetValue.value}
+                    </Typography>
                   </div>
                   <div
                     className="searchstax-facet-value-count text-dark-200 dark:text-light-200"
@@ -104,7 +120,14 @@ export const FacetDesktopTemplate = (
                       selectFacet(key + facet.name, e, facetValue, false);
                     }}
                   >
-                    ({facetValue.count})
+                    <Typography
+                      variant="span"
+                      size="md"
+                      font="regular"
+                      className="!capitalize"
+                    >
+                      ({facetValue.count})
+                    </Typography>
                   </div>
                 </div>
               );
@@ -131,12 +154,12 @@ export const FacetDesktopTemplate = (
                   tabIndex={0}
                 >
                   {facet.showingAllFacets && (
-                    <div className="searchstax-facet-show-less-button searchstax-facet-show-button">
+                    <div className="searchstax-facet-show-less-button searchstax-facet-show-button text-sm font-medium">
                       less
                     </div>
                   )}
                   {!facet.showingAllFacets && (
-                    <div className="searchstax-facet-show-more-button  searchstax-facet-show-button">
+                    <div className="searchstax-facet-show-more-button searchstax-facet-show-button text-sm font-medium">
                       more
                     </div>
                   )}

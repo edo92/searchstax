@@ -1,3 +1,4 @@
+import { Typography } from "@/components/Typography";
 import { ISearchstaxSearchSortingData } from "@searchstax-inc/searchstudio-ux-js";
 
 export function SortingTemplate(
@@ -10,10 +11,12 @@ export function SortingTemplate(
       {sortingData && sortingData?.searchExecuted && (
         <div className="searchstax-sorting-container w-60 px-3">
           <label
-            className="searchstax-sorting-label text-dark-200 dark:text-light-200"
-            htmlFor="searchstax-search-order-select text-md"
+            className="searchstax-sorting-label"
+            htmlFor="searchstax-search-order-select"
           >
-            Sort By
+            <Typography variant="span" size="sm" font="regular">
+              Sort By
+            </Typography>
           </label>
           <select
             id="searchstax-search-order-select"

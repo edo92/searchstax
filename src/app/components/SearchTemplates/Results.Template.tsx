@@ -98,12 +98,13 @@ export const NoResultsTemplate = (
   executeSearch: (searchTerm: string) => void
 ) => (
   <div>
-    <div className="searchstax-no-results text-dark-200 dark:text-light-200 mt-8">
-      Showing <strong>no results</strong> for{" "}
-      <strong>&quot;{searchTerm}&quot;</strong>
-      <br />
+    <div className="searchstax-no-results mt-8">
+      <Typography variant="span" font="regular" size="md">
+        Showing <strong>no results</strong> for{" "}
+        <strong>&quot;{searchTerm}&quot;</strong>
+      </Typography>
       {metaData?.spellingSuggestion && (
-        <span>
+        <Typography variant="span" font="regular" size="md">
           &nbsp;Did you mean{" "}
           <a
             href="#"
@@ -116,15 +117,24 @@ export const NoResultsTemplate = (
             {metaData.spellingSuggestion}
           </a>
           ?
-        </span>
+        </Typography>
       )}
     </div>
     <ul className="text-dark-200 dark:text-light-200">
       <li>
-        Try searching for related terms or topics. We offer a wide variety of
-        content to help you find the information you need.
+        <Typography variant="p" font="regular" size="md">
+          {"Try searching for related terms or topics."}
+          <br />
+          {
+            "We offer a wide variety of content to help you find the information you need."
+          }
+        </Typography>
       </li>
-      <li>Lost? Click on the ‘X’ in the Search Box to reset your search.</li>
+      <li>
+        <Typography variant="p" font="regular" size="md">
+          {"Lost? Click on the ‘X’ in the Search Box to reset your search."}
+        </Typography>
+      </li>
     </ul>
   </div>
 );
