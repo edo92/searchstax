@@ -21,6 +21,7 @@ const TypographyVariants = cva("text-dark-200 dark:text-light-200", {
 
     font: {
       bold: "font-bold",
+      semibold: "font-semibold",
       medium: "font-medium",
       regular: "font-regular",
       light: "font-light",
