@@ -1,4 +1,6 @@
 import { useCallback } from "react";
+import DOMPurify from "dompurify";
+
 import { cn } from "@/lib/cn";
 import type {
   Searchstax,
@@ -23,8 +25,8 @@ export const InputTemplate = (
   const executeDebouncedSearch = useCallback(
     debounce((value: string) => {
       instance.executeSearch(value, true);
-    }, 300), // 300ms delay for debouncing
-    [instance] // Add instance as a dependency if it's changing
+    }, 300),
+    [instance]
   );
 
   return (
@@ -53,7 +55,9 @@ export const InputTemplate = (
             <div className="searchstax-autosuggest-item" key={suggestion.term}>
               <div
                 className="searchstax-autosuggest-item-term-container"
-                dangerouslySetInnerHTML={{ __html: suggestion.term }}
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(suggestion.term),
+                }}
                 onMouseOver={() => onMouseOver(suggestion)}
                 onClick={onMouseClick}
                 tabIndex={0}
