@@ -1,19 +1,18 @@
-import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/cn";
 import { parseDate } from "@/util/date";
-
+import { Typography } from "@/components/Typography";
 import type {
   ISearchstaxParsedResult,
   ISearchstaxSearchMetadata,
 } from "@searchstax-inc/searchstudio-ux-js";
-import { Typography } from "@/components/Typography";
 
 export const ResultsTemplate = (
-  searchResults: ISearchstaxParsedResult[]
-  // resultClicked: (
-  //   results: ISearchstaxParsedResult,
-  //   event: any
-  // ) => ISearchstaxParsedResult[]
+  searchResults: ISearchstaxParsedResult[],
+  resultClicked: (
+    results: ISearchstaxParsedResult,
+    event: unknown
+  ) => ISearchstaxParsedResult[]
 ) => (
   <>
     {searchResults?.length > 0 && (
@@ -21,72 +20,96 @@ export const ResultsTemplate = (
         className="searchstax-search-results mt-2.5 space-y-4"
         aria-live="polite"
       >
-        {searchResults.map(
-          ({ uniqueId, thumbnail, title, description, url, date, ribbon }) => (
+        {searchResults.map((searchResult) => {
+          const { uniqueId, thumbnail, title, description, date, ribbon } =
+            searchResult;
+          const hasImage = Boolean(thumbnail);
+
+          return (
             <div
               tabIndex={0}
               key={uniqueId}
               data-searchstax-unique-result-id={uniqueId}
-              className="dark:bg-dark-300 relative flex gap-6 overflow-hidden rounded-lg bg-gray-100 p-6 shadow-md"
+              className="container mx-auto p-3"
             >
-              {thumbnail && (
-                <div className="flex w-1/3 items-center justify-center">
-                  <Image
-                    src={thumbnail}
-                    alt={title || "Thumbnail"}
-                    className="size-full rounded-lg object-cover"
-                    width={150}
-                    height={150}
-                  />
-                </div>
-              )}
+              <div className="mx-auto w-full">
+                <div className="relative mx-auto shadow-md">
+                  <div
+                    className={cn(
+                      "flex overflow-hidden rounded-lg",
+                      !hasImage && "flex-col justify-between bg-white p-6"
+                    )}
+                  >
+                    {thumbnail && (
+                      <div className="w-1/3">
+                        <Image
+                          src={thumbnail}
+                          alt={title || "Article thumbnail"}
+                          className="h-full object-cover"
+                          width={350}
+                          height={350}
+                        />
+                      </div>
+                    )}
 
-              <div className="flex w-2/3 flex-col justify-between">
-                <div>
-                  <h3 className="text-primary-100/80 text-xl font-semibold hover:underline">
-                    <Link target="_blank" href={url || ""}>
-                      {title}
-                    </Link>
-                  </h3>
-                  {description && (
-                    <Typography
-                      variant="p"
-                      size="sm"
-                      font="regular"
-                      className="text-gray-100"
+                    <div
+                      className={cn(
+                        hasImage &&
+                          "flex w-2/3 flex-col justify-between bg-white p-6"
+                      )}
                     >
-                      {description}
-                    </Typography>
-                  )}
-                </div>
+                      <div className="relative">
+                        {title && (
+                          <h2
+                            onClick={(e) => resultClicked(searchResult, e)}
+                            className="text-primary-100/80 cursor-pointer text-xl font-semibold hover:underline"
+                          >
+                            {title}
+                          </h2>
+                        )}
 
-                {date && (
-                  <Typography
-                    variant="p"
-                    size="xs"
-                    font="light"
-                    className="mt-4 !text-gray-600 dark:!text-gray-300"
-                  >
-                    {parseDate(date)}
-                  </Typography>
-                )}
+                        {description && (
+                          <Typography
+                            variant="p"
+                            size="sm"
+                            font="regular"
+                            className="mb-4 !text-gray-100"
+                          >
+                            {description}
+                          </Typography>
+                        )}
+                      </div>
+
+                      {date && (
+                        <Typography
+                          variant="span"
+                          size="sm"
+                          font="light"
+                          className="!text-gray-600 dark:!text-gray-300"
+                        >
+                          {parseDate(date)}
+                        </Typography>
+                      )}
+
+                      {ribbon && (
+                        <div className="absolute bottom-0 right-0 flex min-w-28 justify-center rounded-br-md rounded-tl-[2px] bg-[#d63202] p-1">
+                          <Typography
+                            variant="small"
+                            size="xs"
+                            font="medium"
+                            className="text-light-100"
+                          >
+                            {ribbon}
+                          </Typography>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              {ribbon && (
-                <div className="absolute bottom-0 right-0 flex min-w-28 justify-center rounded-br-md rounded-tl-[2px] bg-[#d63202] p-1">
-                  <Typography
-                    variant="small"
-                    size="xs"
-                    font="medium"
-                    className="text-light-100"
-                  >
-                    {ribbon}
-                  </Typography>
-                </div>
-              )}
             </div>
-          )
-        )}
+          );
+        })}
       </div>
     )}
   </>
