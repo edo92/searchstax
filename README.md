@@ -4,38 +4,36 @@
 
 ## Table of Contents
 
-1. [Getting Started](#getting-started)
-2. [Technologies](#technologies)
+1. [Installation](#installation)
+2. [Usage](#development-setup)
 
 ---
 
-## Getting Started
-
-Follow these steps to get the project up and running:
-
-1. **Install dependencies**:
+# Installation
 
 ```sh
+git clone https://github.com/edo92/searchstax.git
+cd searchstax
 yarn install
 ```
 
-2. **Start local development**
+# Development Setup
+
+- start local development
 
 ```sh
 yarn dev
 ```
 
-3. **Start in Container**
-   start project in docker container
+- run in docker container
 
 ```sh
 docker-compose up
 ```
 
-## Local development
+# Environmental Variables
 
-- Environmental variables
-  Automatically loads environment variables from .env.dev file and validates with zod
+> **_NOTE:_** Automatically loads environment variables from .env.dev
 
 ```sh
 NEXT_PUBLIC_SEARCH_URL=https://example.com/search
@@ -47,10 +45,3 @@ NEXT_PUBLIC_AUTH_TYPE=token
 NEXT_PUBLIC_RELATED_SEARCHES_API_KEY=your-related-api-key
 NEXT_PUBLIC_ANALYTICS_BASE_URL=https://example.com/analytics
 ```
-
-## Technologies Used
-
-This project leverages the following key technologies:
-
-- **Next.js (v14)**:
-- **Tailwind CSS**:
