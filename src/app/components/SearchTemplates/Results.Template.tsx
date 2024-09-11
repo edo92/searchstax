@@ -21,8 +21,15 @@ export const ResultsTemplate = (
         aria-live="polite"
       >
         {searchResults.map((searchResult) => {
-          const { uniqueId, thumbnail, title, description, date, ribbon } =
-            searchResult;
+          const {
+            uniqueId,
+            thumbnail,
+            title,
+            description,
+            snippet,
+            date,
+            ribbon,
+          } = searchResult;
           const hasImage = Boolean(thumbnail);
 
           return (
@@ -46,7 +53,7 @@ export const ResultsTemplate = (
                         <Image
                           src={thumbnail}
                           alt={title || "Article thumbnail"}
-                          className="h-full object-cover"
+                          className="max-h-[300px] object-cover"
                           width={350}
                           height={350}
                         />
@@ -76,6 +83,17 @@ export const ResultsTemplate = (
                             className="mb-4"
                           >
                             {description}
+                          </Typography>
+                        )}
+
+                        {snippet && (
+                          <Typography
+                            variant="p"
+                            size="sm"
+                            font="regular"
+                            className="mb-4"
+                          >
+                            {snippet}
                           </Typography>
                         )}
                       </div>
