@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import DOMPurify from "dompurify";
 import { cn } from "@/lib/cn";
+import { debounce } from "@/util/util";
 import type {
   Searchstax,
   ISearchstaxSuggestion,
@@ -13,14 +14,6 @@ export const InputTemplate = (
   onMouseClick: () => void,
   instance: Searchstax
 ) => {
-  const debounce = (func: (val: string) => unknown, delay: number) => {
-    let timer: NodeJS.Timeout;
-    return (args: string) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => func(args), delay);
-    };
-  };
-
   const executeDebouncedSearch = useCallback(
     debounce((value: string) => {
       instance.executeSearch(value, true);
@@ -30,7 +23,7 @@ export const InputTemplate = (
 
   return (
     <div className="searchstax-search-input-wrapper relative mb-9">
-      <div className="border-0.5 border-dark-200/30 dark:border-light-200 flex w-full items-center rounded-lg py-3 shadow-md dark:border">
+      <div className="border-0.5 border-dark-200/30 dark:border-light-200 flex w-full items-center rounded-lg py-3 shadow-md">
         <input
           type="text"
           aria-label="search"
