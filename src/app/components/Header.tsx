@@ -10,11 +10,11 @@ export const Header: React.FC = () => (
   <header className="border-dark-100/10 dark:border-light-100/5 mx-auto flex w-full items-center justify-between border-b shadow-sm">
     <nav className="navbar flex w-full items-center justify-between px-3">
       <div className="navbar-start">
-        <a className="btn btn-ghost">
-          <span className="text-dark-200 dark:text-light-200 text-xl">
+        <Link href="/" className="btn btn-ghost">
+          <Typography variant="span" size="xl">
             SearchX
-          </span>
-        </a>
+          </Typography>
+        </Link>
       </div>
 
       <div className="navbar-end mr-6 flex items-center gap-5">
