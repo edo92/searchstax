@@ -37,7 +37,8 @@ export const ResultsTemplate = (
                   <div
                     className={cn(
                       "flex overflow-hidden rounded-lg",
-                      !hasImage && "flex-col justify-between bg-white p-6"
+                      "dark:bg-dark-300 bg-gray-100",
+                      !hasImage && "flex-col justify-between p-6"
                     )}
                   >
                     {thumbnail && (
@@ -54,8 +55,7 @@ export const ResultsTemplate = (
 
                     <div
                       className={cn(
-                        hasImage &&
-                          "flex w-2/3 flex-col justify-between bg-white p-6"
+                        hasImage && "flex w-2/3 flex-col justify-between p-6"
                       )}
                     >
                       <div className="relative">
@@ -73,7 +73,7 @@ export const ResultsTemplate = (
                             variant="p"
                             size="sm"
                             font="regular"
-                            className="mb-4 !text-gray-100"
+                            className="mb-4"
                           >
                             {description}
                           </Typography>
