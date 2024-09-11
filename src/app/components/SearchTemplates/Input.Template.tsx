@@ -29,7 +29,7 @@ export const InputTemplate = (
   );
 
   return (
-    <div className="searchstax-search-input-wrapper mb-4">
+    <div className="searchstax-search-input-wrapper relative mb-9">
       <div className="border-0.5 border-dark-200/30 dark:border-light-200 flex w-full items-center rounded-lg py-3 shadow-md dark:border">
         <input
           type="text"
@@ -43,34 +43,37 @@ export const InputTemplate = (
           }}
         />
 
-        <div
-          className={cn(
-            "searchstax-autosuggest-container",
-            !suggestions.length && "hedden"
-          )}
-          onMouseLeave={onMouseLeave}
-        >
-          {suggestions.map((suggestion) => (
-            <div className="searchstax-autosuggest-item" key={suggestion.term}>
-              <div
-                className="searchstax-autosuggest-item-term-container"
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(suggestion.term),
-                }}
-                onMouseOver={() => onMouseOver(suggestion)}
-                onClick={onMouseClick}
-                tabIndex={0}
-              />
-            </div>
-          ))}
-        </div>
-
         <button
           className="searchstax-spinner-icon"
           aria-label="search"
           role="button"
           id="searchstax-search-input-action-button"
         />
+      </div>
+
+      <div
+        className={cn(
+          "searchstax-autosuggest-container left-0 top-full z-10 !mt-0.5 w-full rounded-md",
+          !suggestions.length && "hidden"
+        )}
+        onMouseLeave={onMouseLeave}
+      >
+        {suggestions.map((suggestion) => (
+          <div
+            className="searchstax-autosuggest-item !rounded-md"
+            key={suggestion.term}
+          >
+            <div
+              className="searchstax-autosuggest-item-term-container"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(suggestion.term),
+              }}
+              onMouseOver={() => onMouseOver(suggestion)}
+              onClick={onMouseClick}
+              tabIndex={0}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
