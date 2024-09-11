@@ -49,7 +49,7 @@ export const ResultsTemplate = (
                     )}
                   >
                     {thumbnail && (
-                      <div className="w-1/3">
+                      <div className="w-1/3 sm:flex sm:justify-between sm:items-center">
                         <Image
                           src={thumbnail}
                           alt={title || "Article thumbnail"}
